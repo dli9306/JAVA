@@ -13,7 +13,7 @@ public class IntroMain {
 		//declaration of a local variable
 		//notice the use of the word 'new'
 		//new must be used to call a constructor
-		CodingConventions conventionsInstance = new CodingConventions("Mr. Nockles",2);
+		CodingCoventions conventionsInstance = new CodingCoventions("Mr. Nockles",2);
 		
 		//instance method call
 		conventionsInstance.doStuff();
