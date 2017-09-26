@@ -3,8 +3,8 @@ package attendance;
 public class Student implements Attendee {
 
 	private boolean present;
-	private String firstName;
-	private String lastName;
+	private String firstName = "David";
+	private String lastName = "Li";
 
 	public Student(String firstName, String lastName){}
 	@Override
@@ -37,7 +37,7 @@ public class Student implements Attendee {
 
 	@Override
 	public boolean mathces(String first, String last) {
-		if(first.toLowerCase().equals(firstName) && last.toLowerCase().equals(lastName) ) {
+		if(first.toLowerCase() == firstName.toLowerCase() && last.toLowerCase() == lastName.toLowerCase() ) {
 			return true;
 		}
 		else {
@@ -84,7 +84,7 @@ public class Student implements Attendee {
 		 }
 		 else
 		 {
-			 String finalString = t + x + "Present ";
+			 String finalString = t + x + "Absent ";
 			 return finalString;
 		 }
 
