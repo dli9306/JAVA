@@ -2,6 +2,7 @@
 *Note: I wrote this class without a compiler, quickly. There are probably errors. I apologize. When I get Internet access with my own computer, I will revise.
 */
 package Strings;
+import java.util.Scanner;
 
 public class Utility{
 
@@ -15,7 +16,7 @@ public class Utility{
       print("You passed all the keywordIsIsolated tests.")
     }
     if(!noNegations("I am not great, but I am okay", 9) && noNegations("I am not great, but I am okay", 25) && noNegations("okay", 0)){
-      print("You passed all the noNegations tests.")
+      print("You passed all the noNegations tests.");
     }
     
   }
@@ -27,7 +28,7 @@ public class Utility{
   
   public static boolean noNegations(String s, int psn){
 	  
-    return true;
+	  return true;
   }
   
   
