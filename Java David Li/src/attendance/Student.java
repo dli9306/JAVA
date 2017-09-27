@@ -3,10 +3,15 @@ package attendance;
 public class Student implements Attendee {
 
 	private boolean present;
-	private String firstName = "David";
-	private String lastName = "Li";
+	private String firstName;
+	private String lastName;
 
-	public Student(String firstName, String lastName){}
+	public Student(String firstName, String lastName){
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		present = false;
+	}
 	@Override
 	public boolean isPresent() {
 		if(present)
@@ -27,17 +32,17 @@ public class Student implements Attendee {
 
 	@Override
 	public String getFirstName() {
-		return this.firstName;
+		return firstName;
 	}
 
 	@Override
 	public String getLastName() {
-		return this.lastName;
+		return lastName;
 	}
 
 	@Override
 	public boolean mathces(String first, String last) {
-		if(first.toLowerCase() == firstName.toLowerCase() && last.toLowerCase() == lastName.toLowerCase() ) {
+		if(first.toLowerCase().equals(firstName.toLowerCase()) && last.toLowerCase().equals(lastName.toLowerCase()) ) {
 			return true;
 		}
 		else {
@@ -48,7 +53,7 @@ public class Student implements Attendee {
 
 	@Override
 	public boolean matches(String last) {
-		if(last.toLowerCase().equals(lastName)) {
+		if(last.toLowerCase().equals(lastName.toLowerCase())) {
 			return true;
 		}
 		else
@@ -79,12 +84,12 @@ public class Student implements Attendee {
 			 }
 		 if(present)
 		 {
-			 String finalString = t + x + "Present ";
+			 String finalString = t + x + "Present\n";
 			 return finalString;
 		 }
 		 else
 		 {
-			 String finalString = t + x + "Absent ";
+			 String finalString = t + x + "Absent\n";
 			 return finalString;
 		 }
 

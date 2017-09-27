@@ -3,7 +3,7 @@
 */
 package Strings;
 
-public class utility{
+public class Utility{
 
   private static Scanner inputSource = new Scanner(System.in);
   
@@ -21,10 +21,12 @@ public class utility{
   }
   
   public static boolean keywordIsIsolated(int psn, String keyword, String s){
+	 
     return true;
   }
   
   public static boolean noNegations(String s, int psn){
+	  
     return true;
   }
   
