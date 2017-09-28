@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Utility{
 
-  //private static Scanner inputSource = new Scanner(System.in);
+  private static Scanner inputSource = new Scanner(System.in);
   
 
   public static void main(String[] args){
@@ -66,27 +66,21 @@ public class Utility{
   }
   
   public static boolean noNegations(String s, int psn){
-	  if(s.substring((psn-5),psn).contains(" not ") || s.substring((psn-4),psn).contains(" no ") )
-	  {
-		 return false;
-	  }
-	  else
-	  {
-		  if(StringIndexOutOfBoundsException()) {
-		  return true;
-		  }
-		  else
-		  {
-			  return false;
-		  }
-	  }
+	  
+      try
+      {
+    	 return s.substring((psn-5),psn).contains(" not ") || s.substring((psn-4),psn).contains(" no ");
+      }
+      catch (StringIndexOutOfBoundsException e)
+      {
+    	  return true;
+      }
+
   }
   
   
-  private static boolean StringIndexOutOfBoundsException() {
-	// TODO Auto-generated method stub
-	return false;
-}
+  
+
 public static String getInput(){
     return inputSource.nextLine();
   }
