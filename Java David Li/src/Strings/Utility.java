@@ -62,19 +62,11 @@ public class Utility{
 	  {
 		  cRight = true;
 	  }
-	  if(cRight && cLeft)
-	  {
-		  return true;
-	  }
-	  else 
-	  {
-		  return false;
-	  }
-
+         return cRight && cLeft;
   }
   
   public static boolean noNegations(String s, int psn){
-	  if(s.substring((psn-4),psn).contains("not") || s.substring((psn-4),psn).contains("no") )
+	  if(s.substring((psn-5),psn).contains(" not ") || s.substring((psn-4),psn).contains(" no ") )
 	  {
 		 return false;
 	  }
@@ -86,7 +78,8 @@ public class Utility{
 		  else
 		  {
 			  return false;
-		  }}
+		  }
+	  }
   }
   
   
