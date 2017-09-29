@@ -7,7 +7,7 @@ public class Chatbot {
 	private boolean chatting;
 	
 	public Chatbot() {
-		david = new ChatbotDavid();
+		david = new ChatbotDavidLi();
 		userName = "unknown user";
 		chatting = true;
 	}
@@ -15,12 +15,13 @@ public class Chatbot {
 	public void startTalking() {
 		ChatbotMain.print("Welcome to our chatbot! what is your name?");
 		userName = ChatbotMain.getInput();
+		chatting = true;
 	    while(chatting){
 	    	ChatbotMain.print("What do you want to talk about");
 	    	String response = ChatbotMain.getInput();
 	    	if(david.isTriggered(response)) {
 	    		chatting = false;
-	    		david.startChatting();
+	    		david.startChatting(response);
 	    	}
 	    	else
 	    	{

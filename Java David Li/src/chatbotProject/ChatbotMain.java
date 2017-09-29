@@ -3,7 +3,7 @@ package chatbotProject;
 import java.util.Scanner;
 
 public class ChatbotMain {
-	
+	//independent of instances,chatbot represents running program. You can access this anywhere in the program; Shows current state of program
 	public static Chatbot chatbot = new Chatbot();
 	
 
@@ -38,12 +38,40 @@ public class ChatbotMain {
 	  
 	  public static boolean keywordIsIsolated(int psn, String keyword, String s){
 		 
-	    return true;
+		  boolean cLeft = false;
+		  boolean cRight = false;
+		  if(psn == 0)
+		  {
+			  cLeft = true;
+		  }
+		  else
+		  {
+			  if(s.substring(psn-1).compareTo("a")<0)
+			  {
+				 cLeft = true;
+			  }
+		  }
+		  if(psn+ keyword.length()-1 == s.length()-1)
+		  {
+			  cRight = true;
+		  }
+		  else if(s.substring(psn+1).compareTo("a")<0)
+		  {
+			  cRight = true;
+		  }
+	         return cRight && cLeft;
 	  }
 	  
 	  public static boolean noNegations(String s, int psn){
 		  
-		  return true;
+	      try
+	      {
+	    	 return s.substring((psn-5),psn).contains("not") || s.substring((psn-4),psn).contains("no");
+	      }
+	      catch (StringIndexOutOfBoundsException e)
+	      {
+	    	  return true;
+	      }
 	  }
 	  
 	  

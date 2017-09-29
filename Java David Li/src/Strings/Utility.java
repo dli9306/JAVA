@@ -69,7 +69,7 @@ public class Utility{
 	  
       try
       {
-    	 return s.substring((psn-5),psn).contains(" not ") || s.substring((psn-4),psn).contains(" no ");
+    	 return s.substring((psn-5),psn).contains("not") || s.substring((psn-4),psn).contains("no");
       }
       catch (StringIndexOutOfBoundsException e)
       {
