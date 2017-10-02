@@ -6,17 +6,22 @@ import java.util.Scanner;
 
 public class Utility{
 
+
   private static Scanner inputSource = new Scanner(System.in);
   
 
   public static void main(String[] args){
     //this main method is designed to help you test your keywordIsIsolated method and noNegations method
     if( keywordIsIsolated(4,"good","i'm good") && keywordIsIsolated(0,"good","good. how are you?") 
-    && !keywordIsIsolated(4,"good","goodbye. i hope you feel good") && keywordIsIsolated(25,"good","goodbye. i hope you feel good")){
+    && !keywordIsIsolated(0,"good","goodbye. i hope you feel good") && keywordIsIsolated(25,"good","goodbye. i hope you feel good")){
       print("You passed all the keywordIsIsolated tests.");
+    }else {
+    	print("You failed some of the keywordIsIsolated tests.");
     }
     if(!noNegations("I am not great, but I am okay", 9) && noNegations("I am not great, but I am okay", 25) && noNegations("okay", 0)){
       print("You passed all the noNegations tests.");
+    }else {
+    	print("You failed some of the noNegations tests.");
     }
     
   }
@@ -49,16 +54,16 @@ public class Utility{
 	  }
 	  else
 	  {
-		  if(s.substring(psn-1).compareTo("a")<0)
+		  if(s.substring(psn-1,psn).compareTo("a")<0)
 		  {
 			 cLeft = true;
 		  }
 	  }
-	  if(psn+ keyword.length()-1 == s.length()-1)
+	  if(psn+ keyword.length() == s.length())
 	  {
 		  cRight = true;
 	  }
-	  else if(s.substring(psn+1).compareTo("a")<0)
+	  else if(s.substring(psn+keyword.length(),psn+keyword.length()+1).compareTo("a")<0)
 	  {
 		  cRight = true;
 	  }
@@ -67,14 +72,16 @@ public class Utility{
   
   public static boolean noNegations(String s, int psn){
 	  
-      try
-      {
-    	 return s.substring((psn-5),psn).contains("not") || s.substring((psn-4),psn).contains("no");
-      }
-      catch (StringIndexOutOfBoundsException e)
-      {
-    	  return true;
-      }
+	  if(psn == 0)
+	  {
+		  return true;
+	  }
+	  else
+	  {
+    	 return s.substring(psn-4,psn-1).contains("not") || s.substring(psn-3,psn-1).contains("no");
+	  }
+
+
 
   }
   
