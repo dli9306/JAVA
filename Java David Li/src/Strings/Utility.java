@@ -78,7 +78,21 @@ public class Utility{
 	  }
 	  else
 	  {
-    	 return s.substring(psn-4,psn-1).contains("not") || s.substring(psn-3,psn-1).contains("no");
+    	 if(s.substring(psn-3,psn).contains("not"))
+    		 {
+    		 return false;
+    		 }
+    	 else 
+    	 { 
+    	 if(s.substring(psn-2,psn).contains("no"))
+    	 	{
+    		 return false;
+    	 	}
+    	 else
+    	 	{
+    		 return true;
+    	 	}
+    	 }
 	  }
 
 
