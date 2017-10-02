@@ -71,20 +71,20 @@ public class Utility{
   }
   
   public static boolean noNegations(String s, int psn){
-	  
 	  if(psn == 0)
 	  {
 		  return true;
 	  }
 	  else
 	  {
-    	 if(s.substring(psn-3,psn).contains("not"))
+    	 if(s.substring(psn-4,psn).contains("not"))
     		 {
+    		 
     		 return false;
     		 }
     	 else 
     	 { 
-    	 if(s.substring(psn-2,psn).contains("no"))
+    	 if(s.substring(psn-3,psn).contains("no"))
     	 	{
     		 return false;
     	 	}
