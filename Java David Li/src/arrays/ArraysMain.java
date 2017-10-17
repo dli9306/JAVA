@@ -12,11 +12,89 @@ public class ArraysMain {
 //		populate(intRay);
 //		checkOccurences(intRay,3,18);
 		populate1ToN(intRay);
-		shuffle(intRay);
+		//shuffle(intRay);
+		//reverseOrder(intRay);
+	    countLessThan(intRay,6);
+	    //frontToBack(intRay);
+	    //cycleThrough(intRay,6);
+	    longestConsecutiveSequence(intRay);
 		//Arrays is a Utility class included in Java for formatting output
 		System.out.println(Arrays.toString(intRay));
+		
+	}
+	/**
+	 * moves the front to the back repeatedly exactly n times
+	 * @param arr
+	 * @param r
+	 */
+ public void cycleThrough(int[]arr,int n) {
+	 for(int i=0;i<n;i++)
+	 {
+		 frontToBack(arr);
+	 }
+ }
+	private int countLessThan(int[] arr, int n) {
+		int count =0;
+		for(int value: arr) {
+			  if(value < n) {
+				  count++;
+			  }
+		  }
+	  return count;
+		
 	}
 
+	private int[] reverseOrder(int[] arr) {
+	   int[]newArray = new int[arr.length];
+	  for(int i = 0; i<arr.length;i++) {
+		   newArray[i] = arr[arr.length-1-i];
+	  }
+		return newArray;
+	}
+	/**
+	 * returns the length of the longest sequence of consequtive integers in arr
+	 * @param arr
+	 * @return
+	 */
+	public int longestConsecutiveSequence(int[]arr) {
+		int highestCount = 0;
+		int currentCount = 0;
+		for(int i=0;i<arr.length-1;i++)
+		{
+			if(arr[i]+1 == arr[i+1])
+			{
+				currentCount++;
+			}
+			else
+			{
+				currentCount = 0;
+			}
+			if(currentCount >highestCount)
+			{
+				highestCount = currentCount;
+			}
+		}
+		return highestCount;
+	}
+	private void reverseOrderOriginal(int[] arr) {
+		  for(int i = 0; i<arr.length/2;i++) {
+			  swap(arr,i,arr.length-1-i);
+		  }
+			
+		}
+	/**
+	 * remove the elemnt at index zero,push every other element up by one. 1 to 0, 2 t0 1,etc
+	 * put the element that was at zero at the end of the arr
+	 * @param arr
+	 */
+    public void frontToBack(int[] arr)
+    {
+    	int temp = arr[0];
+       for(int i =0;i<arr.length-1;i++) {
+    	   arr[i] = arr[i+1];
+       }
+       arr[arr.length-1] = temp;
+    }
 	private void shuffle(int[] arr) {
 		for(int i = 0; i < arr.length; i++) {
 			swap(arr,(int)(Math.random()*arr.length), 
@@ -115,3 +193,4 @@ public class ArraysMain {
 	}
 
 }
+
