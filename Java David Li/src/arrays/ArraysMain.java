@@ -9,17 +9,19 @@ public class ArraysMain {
 	
 	public ArraysMain() {
 		intRay = new int[100];
-//		populate(intRay);
-//		checkOccurences(intRay,3,18);
-		populate1ToN(intRay);
+        //populate(intRay);
+		//checkOccurences(intRay,3,18);
+		//populate1ToN(intRay);
 		//shuffle(intRay);
 		//reverseOrder(intRay);
-	    countLessThan(intRay,6);
+	    //countLessThan(intRay,6);
 	    //frontToBack(intRay);
 	    //cycleThrough(intRay,6);
-	    longestConsecutiveSequence(intRay);
+	    //longestConsecutiveSequence(intRay);
 		//Arrays is a Utility class included in Java for formatting output
-		System.out.println(Arrays.toString(intRay));
+		//System.out.println(Arrays.toString(intRay));
+		//int[] consecTest1 = {1,2,3,6,7,8,9,10,11,45,46,47};
+		//System.out.println(longestConsecutiveSequence(consecTest1));
 		
 	}
 	/**
@@ -64,17 +66,52 @@ public class ArraysMain {
 			if(arr[i]+1 == arr[i+1])
 			{
 				currentCount++;
+				if(currentCount >highestCount)
+				{
+					highestCount = currentCount;
+				}
 			}
 			else
 			{
-				currentCount = 0;
+				currentCount = 1;
+
 			}
-			if(currentCount >highestCount)
-			{
-				highestCount = currentCount;
-			}
+			
 		}
 		return highestCount;
+	}
+	public int longestConsecutivePos(int[]arr) {
+		int pos =0;
+		for(int i=0;i<arr.length-1;i++)
+		{
+			if(arr[i]+1 == arr[i+1])
+			{
+				pos = i;
+				
+			}
+			else
+			{
+				if(arr[i] !=  )
+			}
+			
+		}
+		return pos;
+	}
+	public int[] longestConsecSeqAndPos(int[] arr) {
+		int[] data = new int [2];
+		data[0] = longestConsecutiveSequence(arr);
+		data[1]= "";
+			return data;
+	}
+	public boolean nextElementIsInSequence(int[] arr,int pos) {
+		if(arr[pos]+1 == arr[pos+1])
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 	private void reverseOrderOriginal(int[] arr) {
 		  for(int i = 0; i<arr.length/2;i++) {
