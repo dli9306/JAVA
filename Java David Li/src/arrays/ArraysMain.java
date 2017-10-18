@@ -82,16 +82,24 @@ public class ArraysMain {
 	}
 	public int longestConsecutivePos(int[]arr) {
 		int pos =0;
+		int highestCount = 0;
+		int currentCount = 0;
 		for(int i=0;i<arr.length-1;i++)
 		{
 			if(arr[i]+1 == arr[i+1])
 			{
-				pos = i;
+				currentCount++;
+				if(currentCount >highestCount)
+				{
+					highestCount = currentCount;
+					pos = i-highestCount+1;
+				}
+				
 				
 			}
 			else
 			{
-				if(arr[i] !=  )
+				currentCount = 1;
 			}
 			
 		}
@@ -100,7 +108,7 @@ public class ArraysMain {
 	public int[] longestConsecSeqAndPos(int[] arr) {
 		int[] data = new int [2];
 		data[0] = longestConsecutiveSequence(arr);
-		data[1]= "";
+		data[1]= longestConsecutivePos(arr);
 			return data;
 	}
 	public boolean nextElementIsInSequence(int[] arr,int pos) {
