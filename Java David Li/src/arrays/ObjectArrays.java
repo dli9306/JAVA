@@ -3,21 +3,33 @@ package arrays;
 public class ObjectArrays {
 
 	public ObjectArrays() {
-	    Person[] people = new Person[20];
+	    Object[] people = new Object[20];
 	    populate(people);
-	    for(Person p: people) {
+	    people[0] = new Thing ("coffee maker");
+	    for(Object p: people) {
 	    	System.out.println(p);
 	    }
 	    
 	}
 
-	private void populate(Person[] people) {
+	private void populate(Object[] people) {
 		for(int i=0;i < people.length;i++) {
     		String firstName = randomNameFrom(Person.FIRST_START,Person.FIRST_MIDDLE,Person.FIRST_END);
     		String lastName = randomNameFrom(Person.LAST_START,Person.LAST_MIDDLE,Person.LAST_END);
     		Borough b = randomBorough();
-    		people[i] = new Person(firstName,lastName,b);
+    		//BIG IDEA!!!
+    		//In Object[] (but not primitives arrays like int[] or double[])
+    		// you can have multiple data types(subclasses of the declared type)
+    		if(Math.random() < .6) {
+    			//60% of the time..
+    			int grade = (int)(Math.random()*5)+9;
+    			people[i] = new Student(firstName,lastName,b,grade);
+    		}else {
+    			//40% of the time..
+    			people[i] = new Person(firstName,lastName,b);
+    		}
 		}
+    		
 
 }
 
