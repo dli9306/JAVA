@@ -1,11 +1,13 @@
 package arrays;
 
 public class Person {
-  private String fName;
-  private String lName;
-	public Person(String firstname,String lastname) {
-		this.fName = firstname;
-		this.lName = lastname;
+  private String firstName;
+  private String lastName;
+  private Borough home;
+	public Person(String firstname,String lastname,Borough home) {
+		this.firstName = firstname;
+		this.lastName = lastname;
+		this.home = home;
 	}
 
 }

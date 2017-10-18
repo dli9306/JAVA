@@ -1,9 +1,9 @@
 package arrays;
 
 public class Borough {
-    private String objectName;
+    private String name;
 	public Borough(String name) {
-		this.objectName = name;
+		this.name = name;
 	}
 
 }
