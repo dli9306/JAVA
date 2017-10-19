@@ -30,6 +30,7 @@ public class Person {
 	 * @param people
 	 */
 	public void mingle(Person[] people) {
+		System.out.println("I am in the class" + this.getClass());
 		for(Person p: people) {
 			if(p!= this) {
 				//reassign p to the better of the two friends: your current best friend or p
@@ -50,6 +51,15 @@ public class Person {
 		}
 		if(q.getClass() == this.getClass()) {
 			return q;
+		}
+		if(p.getClass()== this.getClass() && q.getClass()== this.getClass()) {
+			if(p.hobby == this.hobby) {
+				return p;
+			}
+			else
+				if(q.hobby == this.hobby) {
+					return q;
+				}
 		}
 		// if none of these are true, just take p
 		return p;
