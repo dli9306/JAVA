@@ -59,6 +59,34 @@ public class ObjectArrays {
 	    	}
 	    	return randomGroup;
 	    }
+	 /** 
+	  * return the numbe of difference between the two arrays
+	  * difference means they don't have the same element at the same position
+	  * @param arr1
+	  * @param arr2
+	  * @return
+	  */
+	 public int countDifference(Person[] arr1, Person[] arr2)
+	 {
+		int count =0; 
+		for(int i=0;i<arr1.length;i++)
+		{
+			if(arr1[i] != arr2[i])
+			{
+				count++;
+			}
+		}
+		return count;
+	 }
+	 public void testShuffling()
+	 {
+		int finalCount = 0;
+		for(int i=0;i<100;i++) {
+			finalCount += countDifference(people, people);
+		}
+		System.out.println(finalCount/2);
+			
+	 }
 
 		public static boolean personInGroup(Person[] randomGroup, Person nextPerson) {
 			for(int i=0;i<randomGroup.length;i++) {
