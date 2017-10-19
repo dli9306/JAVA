@@ -30,14 +30,49 @@ public class Person {
 	 * @param people
 	 */
 	public void mingle(Person[] people) {
-		
+		for(Person p: people) {
+			if(p!= this) {
+				//reassign p to the better of the two friends: your current best friend or p
+				p = betterFriend(p,friends[0]);
+				addFriendsToFirstPlace(p);
+			}
+		}
+	}
+	private Person betterFriend(Person p, Person q) {
+		if(p == null) {
+			return q;
+		}
+		if(q == null) {
+			return p;
+		}
+		if(p.getClass() == this.getClass()) {
+			return p;
+		}
+		if(q.getClass() == this.getClass()) {
+			return q;
+		}
+		// if none of these are true, just take p
+		return p;
+	}
+	public void printFriends() {
+		System.out.println("my name is "+ firstName+lastName+" and these are my friends: " );
+		for(Person f:friends)
+		{
+			if(f!=null) System.out.println(f);
+		}
 	}
 	/**
 	 * Moves all Person in Friends back one index and puts p at index 0
 	 * @param p
 	 */
 	public void addFriendsToFirstPlace(Person p) {
-		
+		//loop goes backward
+		for(int i=friends.length-1;i<0;i--)
+		{
+			//.. and moves each friend back a position
+			friends[i] = friends[i-1];
+		}
+		friends[0] = p;
 	}
 	
 	public String toString() {

@@ -10,6 +10,7 @@ public class ObjectArrays {
 	    	System.out.println(p);
 	    }
 	    
+	    
 	}
 
 	private void populate(Object[] people) {
@@ -59,7 +60,7 @@ public class ObjectArrays {
 	    	return randomGroup;
 	    }
 
-		private boolean personInGroup(Person[] randomGroup, Person nextPerson) {
+		public static boolean personInGroup(Person[] randomGroup, Person nextPerson) {
 			for(int i=0;i<randomGroup.length;i++) {
 				if(randomGroup[i] == nextPerson)
 				{
