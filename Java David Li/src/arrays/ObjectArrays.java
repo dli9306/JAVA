@@ -45,4 +45,32 @@ public class ObjectArrays {
 	private String get(String[] a) {
 		return a[(int)(Math.random()*a.length)];
 	}
+	 public Person[] selectGroup(Person[] population, int length) {
+	    	// returns a random subgroup;
+	       Person[] randomGroup = new Person[length];
+	       randomGroup[0] = selectAPerson(population);
+	    	for(int i =0;i<length;i++) {
+	    		Person nextPerson = selectAPerson(population);
+	    		while(personInGroup(randomGroup,nextPerson)){
+	    			 nextPerson = selectAPerson(population);
+	    		}
+	    		randomGroup[i] = nextPerson;
+	    	}
+	    	return randomGroup;
+	    }
+
+		private boolean personInGroup(Person[] randomGroup, Person nextPerson) {
+			for(int i=0;i<randomGroup.length;i++) {
+				if(randomGroup[i] == nextPerson)
+				{
+					return true;
+				}
+			}
+			return false;
+		}
+
+		private Person selectAPerson(Person[] population) {
+			return population[(int) (Math.random()*population.length)];
+		}
+   
 }
