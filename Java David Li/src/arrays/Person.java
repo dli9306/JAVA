@@ -15,14 +15,34 @@ public class Person {
   private String firstName;
   private String lastName;
   private Borough home;
+  private Hobby hobby;
+  private Person[] friends;
 	public Person(String firstname,String lastname,Borough home) {
 		this.firstName = firstname;
 		this.lastName = lastname;
 		this.home = home;
+		this.hobby = Hobby.randomHobby();
+		friends = new Person[3];
+	}
+	/**
+	 * chooses friends from people based on who is of the same class
+	 * as this instance and who has the same hobbies
+	 * @param people
+	 */
+	public void mingle(Person[] people) {
+		
+	}
+	/**
+	 * Moves all Person in Friends back one index and puts p at index 0
+	 * @param p
+	 */
+	public void addFriendsToFirstPlace(Person p) {
+		
 	}
 	
 	public String toString() {
 		return "My name is " + firstName+" "+lastName+" and I live in "+home+".";
 	}
+	
 
 }
