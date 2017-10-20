@@ -15,6 +15,7 @@ public class Person {
   private String firstName;
   private String lastName;
   private Borough home;
+  private String nickname;
   private Hobby hobby;
   private Person[] friends;
 	public Person(String firstname,String lastname,Borough home) {
@@ -23,6 +24,13 @@ public class Person {
 		this.home = home;
 		this.hobby = Hobby.randomHobby();
 		friends = new Person[3];
+		this.nickname = createUsername(firstName);
+	}
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 	/**
 	 * chooses friends from people based on who is of the same class
@@ -86,7 +94,40 @@ public class Person {
 	}
 	
 	public String toString() {
-		return "My name is " + firstName+" "+lastName+" and I live in "+home+".";
+		return "My name is " + firstName+" "+lastName+" and I live in "+home+". "+"Call me "+nickname+".";
+	}
+	//JAVA IS PASS-BY-VALUE
+	//meaing the parameters of a method are just values not references
+	// so if you change those values, the original object is not affected
+	// in this case, name will not be changed.In fact, NOTHING can change
+	//the this.firstName via name
+	public static String createUsername(String name)
+	{
+		String nickname = "";
+		int secondVowelPsn = findSecond(name);
+		nickname = name.substring(0,secondVowelPsn);
+		return nickname;
+
+	}
+	private static int findSecond(String word) {
+		boolean foundVowel = false;
+		int index = word.length();
+		word = word.toLowerCase();
+		for(int i=0;i<word.length();i++) {
+			if(word.substring(i,i+1).equals("a") ||
+					word.substring(i,i+1).equals("e") ||
+					word.substring(i,i+1).equals("i") ||
+					word.substring(i,i+1).equals("o") ||
+					word.substring(i,i+1).equals("u")) {
+				if(!foundVowel) {
+					foundVowel = true;
+				}else {
+					return i;
+				}
+				
+			}
+		}
+		return index;
 	}
 	
 
