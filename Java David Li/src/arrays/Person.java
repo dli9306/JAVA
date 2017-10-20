@@ -31,6 +31,7 @@ public class Person {
 	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+		nickname = createUsername(firstName);
 	}
 	/**
 	 * chooses friends from people based on who is of the same class
