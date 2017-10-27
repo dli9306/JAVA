@@ -81,7 +81,7 @@ public class CaveRoom {
 	 * and sets a door between them, updating the directions
 	 * @param direction
 	 * @param anotherRoom
-	 * @param door
+	 * @param doorx
 	 */
 	
 	public void setConnection(int direction, CaveRoom anotherRoom, Door door) {
