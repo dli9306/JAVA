@@ -135,11 +135,29 @@ public class CaveRoom {
 	 * and all the connections
 	 */
 	public static void setUpCaves() {
+		//All OF THIS CODE CAN BE CHANGED
+		//1. Decide how big your caves should be
+		CaveExplorer.caves = new CaveRoom[5][5];
+		//2.Populate with caves and a default description hint: when starting use coordinates (helps debugging)
+		for(int row =0;row<CaveExplorer.caves.length;row++) {
+			//PLEASE PAY ATTENTIONS TO THE DIFFERENCE:
+			for(int col=0;col<CaveExplorer.caves[row].length;col++) {
+				//create a "default" cave
+				CaveExplorer.caves[row][col] = new CaveRoom("This cave has coords("+row+","+col+")");
+				
+			}
+		}
+		//3.Replace default rooms with custom rooms
+		//-- WE WIL DO LATER
+		
+		//4. Set your starting room:
+		CaveExplorer.currentRoom = CaveExplorer.caves[0][1];
+		CaveExplorer.currentRoom.enter();
 		
 	}
 
 	public String getDescription() {
-		return description;
+		return description + "\n" + directions;
 	}
 
 	public void setDescription(String description) {
