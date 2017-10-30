@@ -1,13 +1,16 @@
 package caveExplorer;
 
 public class Inventory {
+	
+	private String map;
 
 	public Inventory() {
-		// TODO Auto-generated constructor stub
+		updateMap();
 	}
 
 	public void updateMap() {
-		// TODO Auto-generated method stub
+		map = " ";
+		
 		
 	}
 
