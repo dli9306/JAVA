@@ -3,7 +3,7 @@ package caveExplorer;
 public class Inventory {
 	
 	private String map;
-	private int hp;
+	private int hp = 10;
 
 	public int getHp() {
 		return hp;
