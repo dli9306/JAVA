@@ -21,7 +21,7 @@ public class CaveRoom {
 		this.description = description;
 		setDefaultContents(" ");
 		contents = defaultContents;
-		//difference between defaultContents and contents is "contents" becomes an 'X' when you are
+		//difference between defaultContentsx and contents is "contents" becomes an 'X' when you are
 		//inside this room, when you leave , it goes back to defaultContents
 		
 		//note: by default,arrays will populate with 'null' meaning there are no connections
