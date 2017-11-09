@@ -1,6 +1,5 @@
 package caveExplorer;
 
-public class Fountain extends CaveRoom {
 	
 	import caveExplorer.CaveExplorer;
 	import caveExplorer.CaveRoom;
@@ -13,7 +12,7 @@ public class Fountain extends CaveRoom {
 		private String inactiveDescription;
 		private int check;
 		private boolean chatting;
-		public DavidCave(String description) {
+		public Fountain(String description) {
 			super(description);
 			this.activeDescription = "You see something in the distance";
 			this.inactiveDescription = "This was where you found the med kit";
