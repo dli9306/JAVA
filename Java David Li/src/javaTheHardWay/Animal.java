@@ -31,7 +31,7 @@ public class Animal {
 		description = getName();
 		age =0;
 	}
-	private void chooseTraits() {
+	public void chooseTraits() {
 		trait1= new Trait();
 		trait2 = new Trait();
 		while(trait1.equals(trait2)) {
@@ -67,7 +67,7 @@ public class Animal {
 	public void reset() {
 		mated = false;
 	}
-	private String getName() {
+	public String getName() {
 		return "animal";
 	}
 		
