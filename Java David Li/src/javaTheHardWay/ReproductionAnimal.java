@@ -17,5 +17,8 @@ public class ReproductionAnimal extends RoamingAnimal {
 		Habitat h = new Habitat(3);
 
 	}
+	public void setMaxLitterSize(int max) {
+		this.maxLitter = max;
+	}
 
 }
