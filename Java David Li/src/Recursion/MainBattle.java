@@ -35,6 +35,14 @@ public class MainBattle {
 			}
 		});
 		 printScore(squirtle, bulbasaur);
+		 squirtle.levelUp(new Effect() {
+			
+			@Override
+			public void happen() {
+				
+				
+			}
+		});
 		 
 }
 

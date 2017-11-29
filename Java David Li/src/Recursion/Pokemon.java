@@ -54,8 +54,8 @@ public class Pokemon {
 		 }
 		 }
 	 public void levelUp(Effect e) {
-		 int oldLvl = getLevel();
-		 setLevel(oldLvl+1);
+		 level++;
+		 e.happen();
 	 }
 	public int getLevel() {
 		return level;
