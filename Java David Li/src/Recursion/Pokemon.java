@@ -53,7 +53,7 @@ public class Pokemon {
 		 System.out.println("The attack missed");
 		 }
 		 }
-	 public void levelUp() {
+	 public void levelUp(Effect e) {
 		 int oldLvl = getLevel();
 		 setLevel(oldLvl+1);
 	 }
