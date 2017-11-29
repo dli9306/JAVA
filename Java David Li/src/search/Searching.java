@@ -43,7 +43,7 @@ public class Searching {
 				+ "\n    Press 'enter' to begin.");
 		in.nextLine();
 
-		int index = search(numbers, target);
+		int index = binarySearch(numbers,numbers[0],numbers.length,target);
 
 		if(index!=-1){
 			System.out.println("The number "+target+" was found at index "+index+". Did the computer win?");
@@ -66,14 +66,25 @@ public class Searching {
 		return -1;
 	}
 	public int binarySearch(int[]searchThis,int startindex,int endIndex,int target) {
-		for(int i=startindex;i<endIndex;i++) {
-			if(searchThis[i]==target) {
-				return i;
+		 int inBtw = (startindex+endIndex)/2;
+			if(searchThis[inBtw]==target) {
+				return inBtw;
 			}else {
-				binarySearch(searchThis, startindex, endIndex, target);
+				int a = endIndex -1;
+				if(startindex == a) {
+					return -1;
+				}
+				if(searchThis[inBtw] > target) {
+				inBtw =binarySearch(searchThis, startindex, inBtw, target);
+				}
+				else {
+					if(searchThis[inBtw] < target) {
+						inBtw =binarySearch(searchThis, inBtw, endIndex, target);
+					}
+				}
 			}
-		}
-		return -1;
+		
+		return inBtw;
 		
 
 	}
