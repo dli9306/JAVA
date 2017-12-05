@@ -12,7 +12,7 @@ public class Fibonacci {
 			return 1;
 		}
 		else {
-			return 
+			return fibonacciSeq(n-1) + fibonacciSeq(n-2);
 		}
 	}
 
